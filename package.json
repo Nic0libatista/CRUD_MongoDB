@@ -1,0 +1,22 @@
+{
+  "name": "crud_mongodb",
+  "version": "1.0.0",
+  "description": "tutorial mongoDb",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nic0libatista/CRUD_MongoDB.git"
+  },
+  "author": "Nicoli Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nic0libatista/CRUD_MongoDB/issues"
+  },
+  "homepage": "https://github.com/Nic0libatista/CRUD_MongoDB#readme",
+  "dependencies": {
+    "mongoose": "^8.12.1"
+  }
+}
