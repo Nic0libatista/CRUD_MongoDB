@@ -1,0 +1,29 @@
+tutorial MongoDB
+passo 1: instalar mongodb e configurar compass
+passo 2: iniciar um novo projeto node (npm init) 
+passo 3: criar estrutura de pastas (sys)
+passo 4: instalar o mongoose (npm i mongoose)
+passo 5: criar modulo de conexão
+
+!!!!!!!!!!!!!!!: validar conexões (conectar apenas se nenhuma outra estiver aberta)
+
+Passo 6: Importar no main os métodos conectar e desconectar
+Passo 7: Criar o modelo de dados (Schema) - Clientes.js
+Passo 8: Importar no main o modelo (Schema)
+Passo 9: Criar os métodos(funções) CRUD
+Passo 10: Estabelecer a conexão - executar os métodos - encerrar a conexão
+
+
+
+
+---------------------------------------------------------------
+crud - mongoose 
+
+crud Create
+save()
+
+Crud read
+find()
+
+crud update
+findByIdAndUpdate()

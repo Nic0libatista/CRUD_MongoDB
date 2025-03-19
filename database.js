@@ -33,9 +33,6 @@ const conectar = async () => {
 
 
 
-
-
-
     //metodo p desconectar o bando de dados
 const desconectar = async () => {
     // validação (se tiver conectado, desconecte.)
@@ -58,4 +55,4 @@ const desconectar = async () => {
 
 
 // importar p/ main os metodos conectar e desconectar
-module.exports = { conectar, desconectar };
+module.exports = { conectar, desconectar};
