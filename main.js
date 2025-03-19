@@ -28,7 +28,12 @@ const salvarcliente = async (nomecli, fonecli, cpfcli) => {
         await novocliente.save()
         console.log("Cliente adicionado com sucesso")
     } catch(error){
-        console.log(error)
+        //tratamento personalizado dos erros(exceções)
+        if (error.code = 11000) {
+            console.log(`Erro: O CPF ${cpfCli} já está cadastrado`)
+        } else {
+            console.log(error)
+        }
     }
 }
 
@@ -82,14 +87,37 @@ const buscarclientenome = async (nome) => {
 // !!! usar o id do cliente 
 const atualizarcliente = async(id,nomecli,fonecli,cpfcli) => {
     try{
-        const clienteeditado = await clientemodel.findByIdAndUpdate()
+        const clienteeditado = await clientemodel.findByIdAndUpdate(id,{
+            nomeCliente: nomecli,
+            foneCliente: fonecli,
+            cpf: cpfcli
+        } , {
+            new:true,
+            runValidators: true
+        }
+    )
+        console.log("dados do cliente alterados com sucesso")
     } catch(error) {
-        console.log(error)
+        //tratamento personalizado dos erros(exceções)
+        if (error.code = 11000) {
+            console.log(`Erro: O CPF ${cpfCli} já está cadastrado`)
+        } else {
+            console.log(error)
+        }
     }
 }
 
 
-
+// função excluir o cliente
+// !!! usar o id do cliente 
+const excluircliente = async(id) => {
+    try{
+        const clientedeletado = await clientemodel.findByIdAndDelete(id)
+        console.log("cliente excluido com sucesso")
+    } catch(error){
+        console.log(error)
+    }
+}
 
 
 const iniciarsistema = async () => {
@@ -106,7 +134,13 @@ const iniciarsistema = async () => {
 
    // await listarclientes()
    // await buscarclientenome("nikly")
-    await buscarclientecpf("200990922767")
+   // await buscarclientecpf("200990922767")
+    
+   // update (id do cliente)
+   //await atualizarcliente("67d881ffb3c82557f801cc1e","marcelina","11 99990-6854","200990903284")
+
+    //crud delete (id do cliente)
+    await excluircliente("67d881ffb3c82557f801cc1e")
     await desconectar()
 }
 

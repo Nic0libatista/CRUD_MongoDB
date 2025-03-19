@@ -27,3 +27,6 @@ find()
 
 crud update
 findByIdAndUpdate()
+
+crud delete
+findByIdAndDelete()
